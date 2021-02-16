@@ -1,9 +1,11 @@
 library(readxl)
 library(tidyr)
 
+rm(list = ls())
 # Q1 and Q2: We have save the raw data sets in both Dropbox and GitHub.
 
 # Q3: Load data in excel file
+dat = NULL
 sheets = c("VoiceandAccountability", "Political StabilityNoViolence", "GovernmentEffectiveness", "RegulatoryQuality", "RuleofLaw", "ControlofCorruption")
 newNames = c("VoiceandAccountability", "PoliticalStability", "GovernmentEffectiveness", "RegulatoryQuality", "RuleofLaw", "ControlofCorruption")
 for (i in 1:length(sheets)) {
@@ -31,14 +33,17 @@ for (i in 1:length(sheets)) {
     col_idx = col_idx + 1
   }
   
-  temp = gather(temp, key, value, Estimate.1996:Upper.2019)
-  temp = separate(temp, col = key, into = c("key", "Year"), convert = TRUE)
-  temp = spread(temp, key, value)
-  assign(paste0("dat.", newNames[i]), temp)
-  write.csv(temp, file = paste0("2020_Worldwide_Govanance_Indicators", newNames[i], ".csv"))
+  temp = gather(temp, key, value, Estimate.1996:Upper.2019) %>%
+    separate(col = key, into = c("key", "Year"), convert = TRUE) %>%
+    spread(key, value)
+  temp$Indicator = newNames[i]
+  if(i == 1) {
+    dat = temp
+  } else {
+    dat = rbind(dat, temp)
+  }
+  # write.csv(temp, file = paste0("2020_Worldwide_Govanance_Indicators", newNames[i], ".csv"))
 }
 rm(list=c("temp", "years", "col_idx", "colname", "colnames_temp", "mod", "newNames", "sheets", "year", "i"))
-
-
-
+write.csv(dat, file = paste0("2020_Worldwide_Govanance_Indicators_1996-2019.csv"))
 
