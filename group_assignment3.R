@@ -1,4 +1,5 @@
 library(readxl)
+library(writexl)
 library(tidyr)
 
 rm(list = ls())
@@ -9,8 +10,8 @@ dat = NULL
 sheets = c("VoiceandAccountability", "Political StabilityNoViolence", "GovernmentEffectiveness", "RegulatoryQuality", "RuleofLaw", "ControlofCorruption")
 newNames = c("VoiceandAccountability", "PoliticalStability", "GovernmentEffectiveness", "RegulatoryQuality", "RuleofLaw", "ControlofCorruption")
 for (i in 1:length(sheets)) {
-  years = read_excel("2020_Worldwide_Govanance_Indicators_1996-2019t.xlsx",range = paste0(sheets[i],"!C14:DX14"), col_names = FALSE, col_types = "numeric")
-  temp = read_excel("2020_Worldwide_Govanance_Indicators_1996-2019t.xlsx",
+  years = read_excel("2020_Worldwide_Governance_Indicators_1996-2019t.xlsx",range = paste0(sheets[i],"!C14:DX14"), col_names = FALSE, col_types = "numeric")
+  temp = read_excel("2020_Worldwide_Governance_Indicators_1996-2019t.xlsx",
                     range = "VoiceandAccountability!A15:DX229")
   colnames_temp = colnames(temp)
   col_idx = 1
@@ -42,8 +43,11 @@ for (i in 1:length(sheets)) {
   } else {
     dat = rbind(dat, temp)
   }
-  # write.csv(temp, file = paste0("2020_Worldwide_Govanance_Indicators", newNames[i], ".csv"))
 }
 rm(list=c("temp", "years", "col_idx", "colname", "colnames_temp", "mod", "newNames", "sheets", "year", "i"))
-write.csv(dat, file = paste0("2020_Worldwide_Govanance_Indicators_1996-2019.csv"))
+# write.csv(dat, file = paste0("2020_Worldwide_Governance_Indicators_1996-2019.csv"))
 
+dat.2018 = dat[dat$Year==2018,]
+
+# Save year 2018 data in Excel for 
+# write_xlsx(dat.2018, "2018_Worldwide_Governance_Indicators.xlsx")
