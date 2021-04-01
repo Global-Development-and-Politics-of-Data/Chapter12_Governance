@@ -29,13 +29,12 @@ dat.wjp.corruption$CodeYear = paste0(dat.wjp.corruption$Code, dat.wjp.corruption
 # Extract corruption from WGI
 dat.wgi.corruption = dat.wgi[dat.wgi$Indicator == "ControlofCorruption", ][-1]
 dat.wgi.corruption$CodeYear = paste0(dat.wgi.corruption$Code, dat.wgi.corruption$Year)
-dat.wgi.corruption = dat.wgi.corruption[,!(names(dat.wgi.corruption) %in% c("Country.Territory", "Code", "Year", "NumSrc", "Rank", "Indicator"))]
+dat.wgi.corruption = dat.wgi.corruption[,!(names(dat.wgi.corruption) %in% c("Country.Territory", "Code", "Year", "NumSrc", "Rank", "Indicator", "Lower", "Upper", "StdErr"))]
 
-names(dat.wgi.corruption) = c("WGI.Estimate",
-                              "WGI.Lower",
-                              "WGI.StdErr",
-                              "WGI.Upper",
-                              "CodeYear")
+names(dat.wgi.corruption) = c("WGI.Estimate", "CodeYear")
 
 
 dat.merged = merge(x = dat.wjp.corruption, y = dat.wgi.corruption, by = "CodeYear", all.x = TRUE)
+
+write.csv(dat.merged, file = "../data/Combined_Corruption_Index_data.csv")
+write_xlsx(dat.merged, "../data/Combined_Corruption_Index_data.xlsx")
