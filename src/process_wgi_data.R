@@ -81,6 +81,10 @@ rm(
     "i"
   )
 )
+
+# Convert to numeric
+dat[, c(3:9)] <- sapply(dat[, c(3:9)], as.numeric)
+
 write.csv(dat, file = "../data/2020_Worldwide_Governance_Indicators_1996-2019.csv")
 write_xlsx(dat, "../data/2020_Worldwide_Governance_Indicators_1996-2019.xlsx")
 
