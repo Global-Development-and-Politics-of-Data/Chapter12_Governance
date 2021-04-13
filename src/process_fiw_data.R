@@ -62,8 +62,8 @@ dat$Code = countrycode(
 )
 
 dat = dat[, names(dat) != "Status"]
-names(dat)[2] = "Political.Rights"
-names(dat)[3] = "Civil.Liberties"
+names(dat)[3] = "Political.Rights"
+names(dat)[4] = "Civil.Liberties"
 
 write.csv(dat, file = "../data/2020_Freedom_in_the_World_1972-2019.csv")
 write_xlsx(dat, "../data/2020_Freedom_in_the_World_1972-2019.xlsx")
