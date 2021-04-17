@@ -9,13 +9,7 @@ dat.wgi = read.csv("../data/2020_Worldwide_Governance_Indicators_1996-2019.csv")
 dat.cpia = read.csv("../data/2020_Country_Policy_Institutional_Assessments_2005-2019.csv")
 
 #### Extract rule of law from WJP
-dat.wjp.meta = dat.wjp[, 2:3]
-dat.wjp.meta$Year = dat.wjp$Year
-dat.wjp.rule_of_law = dat.wjp[, c(34, 44, 52)]
-dat.wjp.rule_of_law = merge(dat.wjp.meta,
-                           dat.wjp.rule_of_law,
-                           by.x = 0,
-                           by.y = 0)[-1]
+dat.wjp.rule_of_law = dat.wjp[, c(2:3, 7, 34, 44, 52)]
 names(dat.wjp.rule_of_law) = c(
   "Country",
   "Code",
