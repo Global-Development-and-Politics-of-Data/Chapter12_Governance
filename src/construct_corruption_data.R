@@ -35,7 +35,7 @@ dat.wjp.corruption = dat.wjp.corruption[!is.na(dat.wjp.corruption$WJP.Factor.2.A
 dat.wgi.corruption = dat.wgi[dat.wgi$Indicator == "ControlofCorruption", ][-1]
 dat.wgi.corruption$CodeYear = paste0(dat.wgi.corruption$Code, ".", dat.wgi.corruption$Year)
 dat.wgi.corruption = dat.wgi.corruption[,!(names(dat.wgi.corruption) %in% c("Code", "Year", "NumSrc", "Rank", "Indicator", "Lower", "Upper", "StdErr"))]
-dat.wgi.corruption = dat.wgi.corruption[!is.na(dat.wgi.corruption$WGI.Estimate), ]
+dat.wgi.corruption = dat.wgi.corruption[!is.na(dat.wgi.corruption$Estimate), ]
 names(dat.wgi.corruption) = c("Country", "WGI.Estimate", "CodeYear")
 
 
@@ -63,6 +63,14 @@ dat.merged = dat.merged %>%
   arrange(Country) %>%
   mutate(Country = Country[1])
 dat.merged = dat.merged[, (names(dat.merged) != "CodeYear")]
+
+# shorten variable names
+names(dat.merged)[4] = "WJP.2.Absent_of_Corruption"
+names(dat.merged)[5] = "WJP.2.1.Executive_Branch_Private_Gain"
+names(dat.merged)[6] = "WJP.2.2.Judicial_Branch_Private_Gain"
+names(dat.merged)[7] = "WJP.2.3.Legislative_Branch_Private_Gain"
+names(dat.merged)[8] = "WGI.Control_of_Corruption"
+names(dat.merged)[9] = "CPIA.Trans_Account_Corruption"
 
 
 write.csv(dat.merged, file = "../data/Combined_Corruption_Index_data.csv")
