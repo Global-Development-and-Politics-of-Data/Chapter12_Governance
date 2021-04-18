@@ -1,35 +1,35 @@
 # Raw Data Sources
 - [World Governance Indicators](https://info.worldbank.org/governance/wgi/Home/Reports) - 2020_Worldwide_Governance_Indicators_1996-2019t.xlsx
-  
   The Worldwide Governance Indicators (WGI) project constructs aggregate indicators of six broad dimensions of governance:
 
-  1. Voice and Accountability
-  2. Political Stability and Absence of Violence/Terrorism
-  3. Government Effectiveness
-  4. Regulatory Quality
-  5. Rule of Law
-  6. Control of Corruption
+1. Voice and Accountability
+2. Political Stability and Absence of Violence/Terrorism
+3. Government Effectiveness
+4. Regulatory Quality
+5. Rule of Law
+6. Control of Corruption
 
 - [World Justice Project Current & Historical Data](https://worldjusticeproject.org/our-work/research-and-data/wjp-rule-law-index-2020/current-historical-data) - 2020_wjp_rule_of_law_index_historical_data.xlsx
   
-  The World Justice Project (WJP)  Rule of Law Index® is a quantitative assessment tool designed by the World Justice Project to offer a detailed and comprehensive picture of the extent to which countries adhere to the rule of law in practice.
+The World Justice Project (WJP)  Rule of Law Index® is a quantitative assessment tool designed by the World Justice Project to offer a detailed and comprehensive picture of the extent to which countries adhere to the rule of law in practice.
 
-    Factors of the WJP Rule of Law Index include: 
+Factors of the WJP Rule of Law Index include: 
 
-  1. Constraints on Government Powers
-  2. Absence of Corruption 
-  3. Open Government 
-  4. Fundamental Rights 
-  5. Order and Security 
-  6. Regulatory Enforcement 
-  7. Civil Justice 
-  8. Criminal Justice
+    1. Constraints on Government Powers
+    2. Absence of Corruption 
+    3. Open Government 
+    4. Fundamental Rights 
+    5. Order and Security 
+    6. Regulatory Enforcement 
+    7. Civil Justice 
+    8. Criminal Justice
 
 - [Country Policy And Institutional Assessment](https://datacatalog.worldbank.org/dataset/country-policy-and-institutional-assessment) - 2020_Country_Policy_and_Institutional_Assessments.xlsx
 
-    The CPIA rates countries against a set of 16 criteria grouped in four clusters: (i) economic management; (ii) structural policies; (iii) policies for social inclusion and equity; and (iv) public sector management and institutions.
+The CPIA rates countries against a set of 16 criteria grouped in four clusters: (i) economic management; (ii) structural policies; (iii) policies for social inclusion and equity; and (iv) public sector management and institutions.
 
-    Here are 21 CPIA indicators:
+Here are 21 CPIA indicators:
+    
     1. business regulatory environment rating
     2. debt policy rating
     3. economic management cluster average
@@ -55,8 +55,8 @@
 
 - [Freedom in the World](https://freedomhouse.org/report/freedom-world) - 2020_Country_and_Territory_Ratings_and_Statuses_FIW1973-2020.xlsx
     
-    Survey Edition refers to the various editions of FIW, except for Jan-Feb 1973 through Jan-Feb 1977, which are from the bimonthly journal Freedom at Issue. The first FIW book-length survey was the 1978 edition.
+Survey Edition refers to the various editions of FIW, except for Jan-Feb 1973 through Jan-Feb 1977, which are from the bimonthly journal Freedom at Issue. The first FIW book-length survey was the 1978 edition.
 
-    PR stands for Political Rights, CL stands for Civil Liberties, and Status refers to the Freedom Status. PR and CL are measured on a one-to-seven scale, with one representing the highest degree of Freedom and seven the lowest.
+PR stands for Political Rights, CL stands for Civil Liberties, and Status refers to the Freedom Status. PR and CL are measured on a one-to-seven scale, with one representing the highest degree of Freedom and seven the lowest.
     
-    F, PF, and NF stand for Free, Partly Free, and Not Free.
+F, PF, and NF stand for Free, Partly Free, and Not Free.
