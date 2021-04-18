@@ -1,6 +1,6 @@
 # Raw Data Sources
 - [World Governance Indicators](https://info.worldbank.org/governance/wgi/Home/Reports) - 
-  2020_Worldwide_Governance_Indicators_1996-2019t.xlsx
+  **2020_Worldwide_Governance_Indicators_1996-2019t.xlsx**
   
 The Worldwide Governance Indicators (WGI) project constructs aggregate indicators of six broad dimensions of governance:
 
@@ -11,7 +11,7 @@ The Worldwide Governance Indicators (WGI) project constructs aggregate indicator
     5. Rule of Law
     6. Control of Corruption
 
-- [World Justice Project Current & Historical Data](https://worldjusticeproject.org/our-work/research-and-data/wjp-rule-law-index-2020/current-historical-data) - 2020_wjp_rule_of_law_index_historical_data.xlsx
+- [World Justice Project Current & Historical Data](https://worldjusticeproject.org/our-work/research-and-data/wjp-rule-law-index-2020/current-historical-data) - **2020_wjp_rule_of_law_index_historical_data.xlsx**
   
 The World Justice Project (WJP)  Rule of Law Index® is a quantitative assessment tool designed by the World Justice Project to offer a detailed and comprehensive picture of the extent to which countries adhere to the rule of law in practice.
 
@@ -26,7 +26,7 @@ Factors of the WJP Rule of Law Index include:
     7. Civil Justice 
     8. Criminal Justice
 
-- [Country Policy And Institutional Assessment](https://datacatalog.worldbank.org/dataset/country-policy-and-institutional-assessment) - 2020_Country_Policy_and_Institutional_Assessments.xlsx
+- [Country Policy And Institutional Assessment](https://datacatalog.worldbank.org/dataset/country-policy-and-institutional-assessment) - **2020_Country_Policy_and_Institutional_Assessments.xlsx**
 
 The CPIA rates countries against a set of 16 criteria grouped in four clusters: (i) economic management; (ii) structural policies; (iii) policies for social inclusion and equity; and (iv) public sector management and institutions.
 
@@ -55,7 +55,7 @@ Here are 21 CPIA indicators:
     21. transparency, accountability, and corruption in the public sector rating
 
 
-- [Freedom in the World](https://freedomhouse.org/report/freedom-world) - 2020_Country_and_Territory_Ratings_and_Statuses_FIW1973-2020.xlsx
+- [Freedom in the World](https://freedomhouse.org/report/freedom-world) - **2020_Country_and_Territory_Ratings_and_Statuses_FIW1973-2020.xlsx**
     
 Survey Edition refers to the various editions of FIW, except for Jan-Feb 1973 through Jan-Feb 1977, which are from the bimonthly journal Freedom at Issue. The first FIW book-length survey was the 1978 edition.
 
