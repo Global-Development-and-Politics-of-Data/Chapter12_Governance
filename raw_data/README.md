@@ -1,13 +1,15 @@
 # Raw Data Sources
-- [World Governance Indicators](https://info.worldbank.org/governance/wgi/Home/Reports) - 2020_Worldwide_Governance_Indicators_1996-2019t.xlsx
-  The Worldwide Governance Indicators (WGI) project constructs aggregate indicators of six broad dimensions of governance:
+- [World Governance Indicators](https://info.worldbank.org/governance/wgi/Home/Reports) - 
+  2020_Worldwide_Governance_Indicators_1996-2019t.xlsx
+  
+The Worldwide Governance Indicators (WGI) project constructs aggregate indicators of six broad dimensions of governance:
 
-1. Voice and Accountability
-2. Political Stability and Absence of Violence/Terrorism
-3. Government Effectiveness
-4. Regulatory Quality
-5. Rule of Law
-6. Control of Corruption
+    1. Voice and Accountability
+    2. Political Stability and Absence of Violence/Terrorism
+    3. Government Effectiveness
+    4. Regulatory Quality
+    5. Rule of Law
+    6. Control of Corruption
 
 - [World Justice Project Current & Historical Data](https://worldjusticeproject.org/our-work/research-and-data/wjp-rule-law-index-2020/current-historical-data) - 2020_wjp_rule_of_law_index_historical_data.xlsx
   
