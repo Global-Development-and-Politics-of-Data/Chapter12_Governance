@@ -1,7 +1,7 @@
 library(readxl)
 library(writexl)
 library(tidyr)
-
+library(corrplot)
 
 rm(list = ls())
 # Q1 and Q2: We have save the raw data sets in both Dropbox and GitHub.
@@ -92,13 +92,17 @@ dat[, c(3:9)] <- sapply(dat[, c(3:9)], as.numeric)
 names(dat)[1] = "Country"
 dat.2010_19 = dat[dat$Year >= 2010,]
 
-# Perform a correlation test on the 2018 data
+# Perform a correlation test on the 2010 to 2019 data
 dat.2010_19 = dat.2010_19[names(dat.2010_19) %in% c("Country", "Code", "Year", "Estimate", "Indicator")]
 dat.2010_19 = spread(dat.2010_19, Indicator, Estimate)
 dat.2010_19 = dat.2010_19[!is.na(dat.2010_19$ControlofCorruption),]
 dat.2010_19 = dat.2010_19[!is.na(dat.2010_19$VoiceandAccountability),]
+dat.2010_19 = dat.2010_19[!is.na(dat.2010_19$PoliticalStability),]
 dat.2010_19$CodeYear = paste0(dat.2010_19$Code, dat.2010_19$Year)
+M = cor(dat.2010_19[c(4:9)])
+corrplot(M, type="lower", method="shade")
 
+# Introduce GDP data from World Bank
 dat.gdp = read.csv("../raw_data/2020_Worldwide_GDP.csv")
 temp = gather(dat.gdp, key, GDP, X1960:X2020)
 temp = temp[!is.na(temp$GDP),]
@@ -112,21 +116,28 @@ dat.2010_19.merge = merge(dat.2010_19,
                        dat.gdp.2010_19,
                        by = "CodeYear")
 
-M = cor(dat.2010_19.merge[c(4:9, 11)])
-corrplot(M, type="lower", method="shade")
+M = cor(dat.2010_19.merge[c(5:10, 12)])
+corrplot(M, type="lower", method="shade") 
+# From the heat map we can see GDP has relatively higher correlation with 
+# GovernmentEffectiveness (GE) and RuleofLaw
 
+# Check correlation on country level
 library(dplyr)
 temp = dat.2010_19.merge %>%
   group_by(Country) %>%
   summarize(Correlation=cor(GovernmentEffectiveness, GDP))
 
-# temp[abs(temp$Correlation) >= 0.9,]
+# Show countries that have high correlation between GE and GDP
 temp[abs(temp$Correlation) >= 0.7,]
+
+# Check percentage based on common cutoff for correlation test
 temp$corr_level = ifelse(abs(temp$Correlation)>0.9, "(0.9-1) Very High", "(0.7-0.9) High")
 temp$corr_level = ifelse(abs(temp$Correlation)<=0.7, "(0.5-0.7) Moderate", temp$corr_level)
 temp$corr_level = ifelse(abs(temp$Correlation)<=0.5, "(0.3-0.5) Low", temp$corr_level)
 temp$corr_level = ifelse(abs(temp$Correlation)<=0.3, "(0-0.3) Negligible", temp$corr_level)
 percent_table = round(table(temp$corr_level) / length(temp$corr_level) * 100, 0)
+
+# Plot distribution
 bp = barplot(
   percent_table,
   space = 1,
