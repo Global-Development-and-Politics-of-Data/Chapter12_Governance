@@ -41,4 +41,4 @@ Alternatively, select the Linux package management system relevant to you if you
 - **Chapter 12 Data Module - Regulatory Quality.R**
 - **Chapter 12 Data Module - Rule of Law.R**
 
-Additional R resources: https://thatdatatho.com/r-resources-beginner-advanced/
+Additional R resources for beginner: https://thatdatatho.com/r-resources-beginner-advanced/
