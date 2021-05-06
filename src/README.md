@@ -35,3 +35,10 @@ Alternatively, select the Linux package management system relevant to you if you
 2. Install RStudio 
    
    Now that R is installed, we can install RStudio. Navigate to the [RStudio downloads page](https://www.rstudio.com/products/rstudio/download/). When we reach the RStudio downloads page, let’s click the “Download” button of the **RStudio Desktop Free** option
+
+### Tutorial and Sample R scripts
+- **Chapter 12 Data Module - Corrption.R**
+- **Chapter 12 Data Module - Regulatory Quality.R**
+- **Chapter 12 Data Module - Rule of Law.R**
+
+Additional R resources: https://thatdatatho.com/r-resources-beginner-advanced/
