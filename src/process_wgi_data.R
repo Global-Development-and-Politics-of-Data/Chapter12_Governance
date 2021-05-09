@@ -2,6 +2,7 @@ library(readxl)
 library(writexl)
 library(tidyr)
 library(corrplot)
+library(latticeExtra)
 
 rm(list = ls())
 # Q1 and Q2: We have save the raw data sets in both Dropbox and GitHub.
@@ -90,9 +91,24 @@ dat[, c(3:9)] <- sapply(dat[, c(3:9)], as.numeric)
 # write_xlsx(dat, "../data/2020_Worldwide_Governance_Indicators_1996-2019.xlsx")
 
 names(dat)[1] = "Country"
-dat.2010_19 = dat[dat$Year >= 2010,]
 
+## China plot percentile over year
+dat.china = dat[dat$Code=="CHN",]
+dat.china = dat.china[names(dat.china) %in% c("Country", "Code", "Year", "Rank", "Indicator")] %>% 
+  spread(Indicator, Rank)
+xyplot(
+  ControlofCorruption + GovernmentEffectiveness + RegulatoryQuality + RuleofLaw + VoiceandAccountability ~ Year,
+  dat.china,
+  type = "l",
+  lwd = "2",
+  auto.key=T,
+  ylab = "Percentile",
+  scales = list(tick.number = 11)
+)
+
+## Further analysis
 # Perform a correlation test on the 2010 to 2019 data
+dat.2010_19 = dat[dat$Year >= 2010,]
 dat.2010_19 = dat.2010_19[names(dat.2010_19) %in% c("Country", "Code", "Year", "Estimate", "Indicator")]
 dat.2010_19 = spread(dat.2010_19, Indicator, Estimate)
 dat.2010_19 = dat.2010_19[!is.na(dat.2010_19$ControlofCorruption),]
@@ -149,3 +165,28 @@ bp = barplot(
   sub = "Source: World Bank Data 2010-2019"
 )
 text(bp, 0, paste0(percent_table, "%"), cex = 1, pos = 3)
+
+
+#### Check Fiji (FJI)
+dat.2010_19.FJI = dat.2010_19.merge[dat.2010_19.merge$Code == "FJI",]
+names(dat.2010_19.FJI)[4] = "Year"
+
+p1 = xyplot(
+  ControlofCorruption + GovernmentEffectiveness + RegulatoryQuality + RuleofLaw ~ Year, dat.2010_19.FJI, type = "l", lwd=2
+)
+
+p2 = xyplot(GDP ~ Year, dat.2010_19.FJI, type = "l", lwd=3, col="orange")
+
+doubleYScale(
+  p1,
+  p2,
+  text = c(
+    "ControlofCorruption",
+    "GovernmentEffectiveness",
+    "RegulatoryQuality",
+    "RuleofLaw",
+    "GDP"
+  ),
+  add.ylab2 = TRUE,
+  use.style = FALSE
+)
