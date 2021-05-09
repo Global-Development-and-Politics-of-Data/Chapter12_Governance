@@ -172,7 +172,11 @@ dat.2010_19.FJI = dat.2010_19.merge[dat.2010_19.merge$Code == "FJI",]
 names(dat.2010_19.FJI)[4] = "Year"
 
 p1 = xyplot(
-  ControlofCorruption + GovernmentEffectiveness + RegulatoryQuality + RuleofLaw ~ Year, dat.2010_19.FJI, type = "l", lwd=2
+  ControlofCorruption + GovernmentEffectiveness + RegulatoryQuality + RuleofLaw ~ Year,
+  dat.2010_19.FJI,
+  type = "l",
+  lwd = 2,
+  ylab = "WGI Estimate"
 )
 
 p2 = xyplot(GDP ~ Year, dat.2010_19.FJI, type = "l", lwd=3, col="orange")
