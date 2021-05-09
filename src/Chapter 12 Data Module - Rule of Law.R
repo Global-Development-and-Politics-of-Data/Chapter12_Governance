@@ -1,31 +1,8 @@
 ##### CHAPTER 12: GOVERNANCE - DATA MODULE #####
 
-# In this next section, you will be given a scenario, which presents you with a specific motivation for choosing, visualizing, 
-# and presenting data in a specific way. Your goal will be to choose an indicator that shows off your country in the best light. 
-# This exercise will allow you to investigate and compare data together in order to decide which indicator presents your country most 
-# advantageously regarding an aspect of governance. By being placed in a situation where you are incentivized to cherry-pick through 
-# data, you will learn how easily data can be manipulated to tell different stories. After this exercise, we hope you will look at data 
-# visualizations and comparative statistics with a new sense of understanding, and be able to question the motivations and intentions 
-# behind the data that might be painting a specific picture. 
+# See the Data Module Instruction page for instructions. 
 
-# You will make a line graph in R showing a governance trend in your country over a period of 5 years. Then, you 
-# will prepare a short presentation where you will show how your country is improving and why your data is reliable. In this section, 
-# you will ask the following questions: 
-#  1)	How can we examine specific data in R? 
-#  2)	How do we create a simple line graph using ggplot in R? 
-#  3)	How can the cherry-picking of data happen?
-
-# For the following exercise, read each scenario thoroughly. Then, use R or Excel to import the Governance Chapter data set. 
-# Examine each indicator carefully and decide which one is best to use for your scenario. (Remember, some indicators are composite 
-# indicators, which means they are made up of several other indicators also in the data set that were combined into one variable. 
-# You can choose either the more basic indicators or a composite indicator.) You will find the basic information about the indicator 
-# you chose and create a simple line graph showing the trajectory of your country. 
-
-# Then, plan a short presentation where you present your data and best argument to the class. After you finish the presentation, 
-# discuss: What led you to pick one indicator over another? What critiques might data-savvy nay-sayers voice about why your 
-# presentation? How would you respond? 
- 
-###### Scenarios #####
+###### Scenario #####
 
 ### Rule of Law ###
 
