@@ -85,7 +85,7 @@ summary(data_subset)
 # Make your plot
 ggplot(data = data_subset,
        aes(y = ... , x = Year)) + geom_line(color = "blue") + geom_point(size = 2, color = "red") +
-  labs(title = "Best Plot Ever", subtitle = "Absence of regulatory in Ecuador", x = "Year", y = "Levels of Regulatory")
+  labs(title = "Best Plot Ever", subtitle = "...", x = "Year", y = "Regulatory Quality")
 
 # Which indicator do you think represents your country best? 
 # Remember to give your graph a descriptive title and labels. Feel free to look online for other ways to personalize your graph 
